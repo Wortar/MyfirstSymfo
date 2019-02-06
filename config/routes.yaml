@@ -1,0 +1,23 @@
+index:
+   path: /
+   controller: App\Controller\DefaultController::index
+hello_index:
+    path: /hello/
+    controller: App\Controller\HelloController::index
+hello_perso_index:
+    path: /hello/{prenom}/{age}
+    controller: App\Controller\HelloController::index_perso
+    requirements:
+        prenom: '[A-Za-z]+'
+        age: '[0-9]+'
+
+hello_sansage_index:
+    path: /hello/{prenom}
+    controller: App\Controller\HelloController::index_sansage
+    requirements:
+        prenom: '[A-Za-z]+'
+
+hello_telephone_index:
+    path: /telephone/add
+    controller: App\Controller\TelephoneController::index_telephone
+    requirements:
